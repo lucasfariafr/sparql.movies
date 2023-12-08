@@ -1,46 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Graphe à barres SPARQL</title>
     <!-- bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-indigo-600">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="logo.png" alt="logo" width="80px"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-          </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="logo.png" alt="logo" width="80px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Stick graph</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Spie chart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Query</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <!-- stick bar -->
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6">
-                <canvas id="myChart"></canvas>
-            </div>
+          <div class="col-md-6 d-flex justify-content-center align-items-center"> <!-- Ajout de la classe align-items-center -->
+            <canvas id="myChart"></canvas>
+          </div>
         </div>
-    </div>
+      </div>
+
+    <!-- footer -->
+    <footer class="footer fixed-bottom py-3 bg-light">
+        <div class="container">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
+        <p class="text-center text-body-secondary">© 2023 Lucas Faria & Vyncent Luchez</p>
+      </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -50,5 +76,5 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- our script -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
