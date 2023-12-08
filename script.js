@@ -28,25 +28,57 @@ function createStick() {
   const myChart = new Chart(ctx, config);
 }
 
+function createPieChart() {
+  const data = {
+    labels: ["A", "B", "C", "D", "E"],
+    datasets: [
+      {
+        label: "Exemple de Camembert",
+        data: [20, 15, 25, 10, 30],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(255, 206, 86, 0.5)",
+          "rgba(75, 192, 192, 0.5)",
+          "rgba(153, 102, 255, 0.5)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const config = {
+    type: "pie",
+    data: data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  };
+
+  const ctx = document.getElementById("pieChart").getContext("2d");
+  new Chart(ctx, config);
+}
+
 function loadContent(url, containerId) {
   fetch(url)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`Erreur de chargement du fichier ${url}`);
       }
       return response.text();
     })
-    .then(data => {
+    .then((data) => {
       document.getElementById(containerId).innerHTML = data;
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(error);
     });
 }
-
-window.onload = function () {
-  loadContent('/view/header.html', 'headerContainer');
-  loadContent('/view/navbar.html', 'navbarContainer');
-  loadContent('/view/footer.html', 'footerContainer');
-  createStick();
-};
