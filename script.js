@@ -1,32 +1,38 @@
-// Données factices pour le graphique
-const data = {
-  labels: ["Janvier", "Février", "Mars", "Avril", "Mai"],
-  datasets: [
-    {
-      label: "Ventes mensuelles",
-      backgroundColor: "rgba(54, 162, 235, 0.5)",
-      borderColor: "rgba(54, 162, 235, 1)",
-      borderWidth: 1,
-      data: [20, 35, 40, 25, 30],
-    },
-  ],
-};
+function createStick() {
+  const data = {
+    labels: ["Janvier", "Février", "Mars", "Avril", "Mai"],
+    datasets: [
+      {
+        label: "Ventes mensuelles",
+        backgroundColor: "rgba(54, 162, 235, 0.5)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 1,
+        data: [20, 35, 40, 25, 30],
+      },
+    ],
+  };
 
-// Configuration du graphique
-const config = {
-  type: "bar",
-  data: data,
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
+  const config = {
+    type: "bar",
+    data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
       },
     },
-  },
-};
+  };
 
-// Récupération du contexte du canevas
-const ctx = document.getElementById("barChart").getContext("2d");
+  const ctx = document.getElementById("barChart").getContext("2d");
+  const myChart = new Chart(ctx, config);
+}
 
-// Création du graphique à barres
-const myChart = new Chart(ctx, config);
+function load(url, idElement) {
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById(idElement).innerHTML = data;
+    })
+    .catch((error) => console.log("Erreur de chargement : ", error));
+}
