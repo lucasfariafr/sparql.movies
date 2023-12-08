@@ -30,3 +30,11 @@ const data = {
   
   // Création du graphique à barres
   const myChart = new Chart(ctx, config);
+
+  $(document).ready(function () {
+    // Charge la barre de navigation
+    $("#navbar-container").load("view/navbar.html");
+  
+    // Charge le pied de page
+    $("#footer-container").load("view/footer.html");
+  });
