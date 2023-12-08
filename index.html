@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Statistiques</title>
-    <!-- bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -26,14 +25,43 @@
     </style>
   </head>
   <body class="d-flex flex-column vh-100">
-
-    <div id="navbar-container"></div>
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="/view/img/logo.png" alt="logo" width="80px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Stick graph</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Spie chart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Query</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
       <h3 class="center-title">
         Le budget d'un film est-il un facteur de grande audience ?
       </h3>
-
       <!-- stick bar -->
       <div class="row justify-content-center align-items-center">
         <div class="col-lg-8">
@@ -41,9 +69,14 @@
         </div>
       </div>
     </div>
-
-    <div id="footer-container"></div>
-    
+    <footer class="footer py-3 bg-light fixed-bottom">
+      <div class="container">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
+        <p class="text-center text-body-secondary">
+          © 2023 Lucas Faria & Vyncent Luchez
+        </p>
+      </div>
+    </footer>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- bootstrap JS -->
