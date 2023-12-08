@@ -1,0 +1,14 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.center-title {
+  text-align: center;
+  margin-top: 20px;
+}
+#barChart {
+  max-width: 100%;
+  height: auto;
+}

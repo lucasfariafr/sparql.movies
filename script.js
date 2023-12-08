@@ -28,11 +28,25 @@ function createStick() {
   const myChart = new Chart(ctx, config);
 }
 
-function load(url, idElement) {
+function loadContent(url, containerId) {
   fetch(url)
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById(idElement).innerHTML = data;
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Erreur de chargement du fichier ${url}`);
+      }
+      return response.text();
     })
-    .catch((error) => console.log("Erreur de chargement : ", error));
+    .then(data => {
+      document.getElementById(containerId).innerHTML = data;
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }
+
+window.onload = function () {
+  loadContent('/view/header.html', 'headerContainer');
+  loadContent('/view/navbar.html', 'navbarContainer');
+  loadContent('/view/footer.html', 'footerContainer');
+  createStick();
+};
