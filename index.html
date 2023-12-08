@@ -15,7 +15,7 @@
       }
     </style>
   </head>
-  <body class="d-flex flex-column">
+  <body class="d-flex flex-column min-vh-100">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -52,19 +52,17 @@
     </nav>
 
     <!-- stick bar -->
-    <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-6 d-flex justify-content-center align-items-center"> <!-- Ajout de la classe align-items-center -->
-            <canvas id="myChart"></canvas>
-          </div>
-        </div>
-      </div>
+    <div class="container d-flex justify-content-center align-items-center flex-grow-1">
+        <canvas id="barChart" width="400" height="400"></canvas>
+    </div>
 
     <!-- footer -->
-    <footer class="footer fixed-bottom py-3 bg-light">
-        <div class="container">
+    <footer class="footer py-3 bg-light fixed-bottom">
+      <div class="container">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
-        <p class="text-center text-body-secondary">© 2023 Lucas Faria & Vyncent Luchez</p>
+        <p class="text-center text-body-secondary">
+          © 2023 Lucas Faria & Vyncent Luchez
+        </p>
       </div>
     </footer>
 
